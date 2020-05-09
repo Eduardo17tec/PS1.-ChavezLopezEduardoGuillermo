@@ -1,0 +1,94 @@
+﻿@model IEnumerable<PS1._ChavezLopezEduardoGuillermo.Models.Event>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Eventos</h2>
+
+<p>
+    @Html.ActionLink("Crear nuevo evento", "Create")
+</p>
+<table class="table table-hover">
+    <tr>
+        <th>
+            Nombre del Evento
+        </th>
+        <th>
+            Fecha de inicio
+        </th>
+        <th>
+            Fecha de finalizacion
+        </th>
+        <th>
+            Tipo de evento
+        </th>
+        <th>
+            Capacidad de personas
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombreEvento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaInicio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaFinal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoEvento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Capacidad)
+        </td>
+        <td>
+            <span class="glyphicon glyphicon-wrench"></span>@Html.ActionLink("Editar", "Edit", new { id=item.Id }) |
+            <span class="glyphicon glyphicon-eye-open"></span>@Html.ActionLink("Detalles", "Details", new { id=item.Id }) |
+            <span class="glyphicon glyphicon-trash"></span>@Html.ActionLink("Borrar", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
+
+<h3>Eventos de ejemplo:</h3>
+
+<div class="row">
+    <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+            <img src="~/Content/img/E32020.jpg" alt="">
+            <div class="caption">
+                <h3>E3 2020</h3>
+                <p>Es la convencion de videojuegos mas importante del mundo, y cada año se escoje una ciudad reconocida para 
+                ser la cuspide de este evento.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+            <img src="~/Content/img/FeriaT.png" alt="">
+            <div class="caption">
+                <h3>Feria Tijuana</h3>
+                <p>Es la feria ms grande de tijuana, se hace cada año; y con ello, se encuentran artistas
+                y llega la mejor comida mexicana.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+            <img src="~/Content/img/ComicCon.jpg" alt="">
+            <div class="caption">
+                <h3>Comic Con</h3>
+                <p>La convencion mas grande de comic e influencia geek se hace presente cada año en las ciudades mas importantes
+                de EU.</p>
+            </div>
+        </div>
+    </div>
+</div>

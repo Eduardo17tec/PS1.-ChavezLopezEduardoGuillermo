@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1 class="text-center">Practica Semanal 01</h1>
+    <p class="lead text-center">Desarrollo de Aplicaciones Web</p>
+    
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Eventos</h2>
+        <p>
+            Los eventos son parte importante del desarrollo cultural y social de una entidad poblacional
+            ya que puede generar felicidad en las masas, ayudas sociales, actividades de caridad y un largo
+            etc que ayuda al crecimiento de una ciudad.
+        </p>
+        <img src="~/Content/img/Evento.jpg" width="300" height="200">
+        <p><a class="btn btn-primary" @Html.ActionLink("Eventos", "Index", "Events")></a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Ciudades</h2>
+        <p>
+            Para que surja un gran evento tiene que realizarse en una ciudad que haga relucir ese mismo evento,
+            para ello, la ciudad debe de aceptar el evento y almismo tiempo, comprometerse con el.
+        </p>
+        <img src="~/Content/img/Ciudad.jpg" width="300" height="200">
+        <p><a class="btn btn-primary" @Html.ActionLink("Ciudades", "Index", "Cities")></a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Sobre mi</h2>
+        <p>
+            Mucho gusto, soy Chavez Lopez Eduardo Guillermo y esta pagina fue elaborada por mi
+            si quieres contactarme o saber mas de mi, dirigete a la seccon de contacto.
+        </p>
+        <img src="~/Content/img/Mi foto.jpg" width="200" height="200">
+        <p><a class="btn btn-primary" @Html.ActionLink("Contacto", "Contact", "Home")></a></p>
+    </div>
+</div>

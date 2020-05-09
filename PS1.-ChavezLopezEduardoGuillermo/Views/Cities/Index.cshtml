@@ -1,0 +1,91 @@
+﻿@model IEnumerable<PS1._ChavezLopezEduardoGuillermo.Models.City>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Ciudades</h2>
+
+<p>
+    @Html.ActionLink("Agregar Ciudad", "Create")
+</p>
+<table class="table table-hover">
+    <tr>
+        <th>
+            Nombre de la ciudad
+        </th>
+        <th>
+            Cantidad de personas
+        </th>
+        <th>
+            Nombre del estado
+        </th>
+        <th>
+            Pais
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreCiudad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Poblacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pais)
+            </td>
+            <td>
+                <span class="glyphicon glyphicon-wrench"></span>@Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
+                <span class="glyphicon glyphicon-eye-open"></span>@Html.ActionLink("Detalles", "Details", new { id = item.Id }) |
+                <span class="glyphicon glyphicon-trash"></span>@Html.ActionLink("Borrar", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>
+
+<h3>Ciudades de ejemplo:</h3>
+
+<div class="row">
+    <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+            <img src="~/Content/img/Tijuana.jpg" alt="">
+            <div class="caption">
+                <h3>Tijuana</h3>
+                <p>La ciudad donde resido y llena de multiculturalidad y colores tan extravagantes de todo tipo, 
+                aqui es deonde comienza la patria.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+            <img src="~/Content/img/Tokyo.jpg" alt="">
+            <div class="caption">
+                <h3>Tokyo</h3>
+                <p>La mas grande ciudad de Japon y su capital, es una de los mayores centros de exposicion de todo tipo,
+                desde ciencias hasta la tecnologia de punta mas innovadora.</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+            <img src="~/Content/img/NY.jpg" alt="">
+            <div class="caption">
+                <h3>Nueva York</h3>
+                <p>La megapolis de Estados Unidos, el epicentro mas grande el mundo, y por ende, donde se hacen la mayoria de 
+                eventos internacionales.</p>
+            </div>
+        </div>
+    </div>
+</div>
